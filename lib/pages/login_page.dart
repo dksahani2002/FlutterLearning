@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import '../utils/routes.dart';
+import 'package:flutter/src/widgets/navigator.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -43,10 +50,12 @@ class LoginPage extends StatelessWidget {
                 // child: Text("check"),
               ),
               ElevatedButton(
-                  onPressed: () {
-                    print("Hi Durgeshwar");
-                  },
-                  child: Text("Login"))
+                child: Text("Login"),
+                style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.homeRoute);
+                },
+              ),
             ],
           ),
         )
