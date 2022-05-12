@@ -9,18 +9,19 @@ class HomePage extends StatelessWidget {
   var day = "hero"; //var understand the datatype after defining anytype
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("FlutterLearn"), //app name
+      appBar: AppBar( 
+        title: Text(
+          "FlutterLearn",
+          style: TextStyle(color: Colors.black),
+        ), //app name
+      ),
+      body: Center(
+        child: Container(
+          child: Text(
+              " $s , Hi there am here for $days and $count , His gender is male: $genderMale. He is checking var : $day"),
         ),
-        body: Center(
-          child: Container(
-            child: Text(
-                " $s , Hi there am here for $days and $count , His gender is male: $genderMale. He is checking var : $day"),
-          ),
-        ),
-        drawer: MyDrawer(
-          
-        ),
-        );
+      ),
+      drawer: MyDrawer(),
+    );
   }
 }

@@ -3,6 +3,7 @@ import 'package:learningapp/pages/home_page.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 import '../utils/routes.dart';
+import 'widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,13 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      // initialRoute: "/",
+      theme: MyTheme.LightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
